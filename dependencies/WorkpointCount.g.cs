@@ -34,6 +34,7 @@ namespace Elements
             this.Type = @type;
             }
         
+        
         // Empty constructor
         public WorkpointCount()
             : base()

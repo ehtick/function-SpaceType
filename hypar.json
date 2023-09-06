@@ -25,18 +25,7 @@
   ],
   "input_schema": {
     "type": "object",
-    "properties": {
-      "Program Name": {
-        "type": ["string", "null"]
-      },
-      "Space Type": {
-        "$ref": "https://schemas.hypar.io/InputFolder.json",
-        "$hyparHasTag": "SpaceType",
-        "$hyparFileTypes": [
-          ".json"
-        ]
-      }
-    }
+    "properties": {}
   },
   "overrides": {
     "Furniture Locations": {
@@ -62,7 +51,8 @@
     "https://schemas.hypar.io/SpaceBoundary.json",
     "https://schemas.hypar.io/LevelVolume.json",
     "https://schemas.hypar.io/WorkpointCount.json",
-    "https://schemas.hypar.io/CirculationSegment.json"
+    "https://schemas.hypar.io/CirculationSegment.json",
+    "https://schemas.hypar.io/ProgramRequirement.json"
   ],
   "model_output": "any",
   "repository_url": "https://github.com/hypar-io/function",
