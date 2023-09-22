@@ -62,7 +62,14 @@ namespace SpaceType
 
             if(this.store == null)
             { 
-                this.store = new UrlModelStore<SpaceTypeInputs>(); 
+                if (args.SignedResourceUrls == null)
+                {
+                    this.store = new S3ModelStore<SpaceTypeInputs>(RegionEndpoint.GetBySystemName("us-west-1"));
+                }
+                else
+                {
+                    this.store = new UrlModelStore<SpaceTypeInputs>();
+                }
             }
 
             var l = new InvocationWrapper<SpaceTypeInputs,SpaceTypeOutputs> (store, SpaceType.Execute);

@@ -14,6 +14,8 @@ namespace Elements
 
         public Guid? Catalog { get; set; }
 
+        public bool Enclosed { get; set; }
+
         public (string? catalogPath, string? configPath) WriteLayoutConfigs(Model programReqModel)
         {
             if (!this.SpaceConfig.HasValue || !this.Catalog.HasValue)

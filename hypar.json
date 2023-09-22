@@ -54,7 +54,7 @@
     "https://schemas.hypar.io/CirculationSegment.json",
     "https://schemas.hypar.io/ProgramRequirement.json"
   ],
-  "model_output": "any",
+  "model_output": "Furniture and Equipment",
   "repository_url": "https://github.com/hypar-io/function",
   "last_updated": "0001-01-01T00:00:00",
   "cli_version": "1.8.0-alpha.8"

@@ -41,7 +41,7 @@ namespace SpaceType
             inputModels,
             input.Overrides,
             output.Model,
-            true,
+            programReq.Enclosed,
             configPath,
             catalogPath);
       }
