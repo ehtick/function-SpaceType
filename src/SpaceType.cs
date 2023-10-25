@@ -48,19 +48,18 @@ namespace SpaceType
       }
 
       var programReqs = programReqModel.AllElementsOfType<ProgramRequirement>();
+      var programReqsBySpaceType = programReqs.GroupBy(pr => pr.HyparSpaceType ?? pr.QualifiedProgramName, pr => pr);
       var alreadyHandled = new HashSet<string>();
       var handledSpaces = new HashSet<Guid>();
-      foreach (var programReq in programReqs)
+      foreach (var group in programReqsBySpaceType)
       {
-        var programName = programReq.HyparSpaceType ?? programReq.QualifiedProgramName;
+        var programName = group.Key;
+        var programReq = group.First();
         if (ReservedSpaceTypes.Contains(programName))
         {
           continue;
         }
-        if (alreadyHandled.Contains(programReq.QualifiedProgramName))
-        {
-          continue;
-        }
+
         var (catalogPath, configPath) = programReq.WriteLayoutConfigs(programReqModel);
         if (catalogPath == null || configPath == null)
         {
