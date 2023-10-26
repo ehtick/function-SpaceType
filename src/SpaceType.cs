@@ -48,7 +48,15 @@ namespace SpaceType
       }
 
       var programReqs = programReqModel.AllElementsOfType<ProgramRequirement>();
-      var programReqsBySpaceType = programReqs.GroupBy(pr => pr.HyparSpaceType ?? pr.QualifiedProgramName, pr => pr);
+      var programReqsBySpaceType = programReqs.GroupBy(pr =>
+      {
+        var name = pr.HyparSpaceType ?? pr.QualifiedProgramName;
+        if (name == "unspecified")
+        {
+          name = pr.QualifiedProgramName;
+        }
+        return name;
+      }, pr => pr);
       var alreadyHandled = new HashSet<string>();
       var handledSpaces = new HashSet<Guid>();
       foreach (var group in programReqsBySpaceType)
