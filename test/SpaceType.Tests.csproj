@@ -23,6 +23,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\src\SpaceType.csproj" />
+    <!-- This is just a personal thing I use with utility methods for debugging, apologies if I forget to comment it out when committing. It should not affect the functioning of the tests. -->
+    <!-- <ProjectReference Include="..\..\DebugHelper\DebugHelper.csproj" /> -->
   </ItemGroup>
 
 </Project>
