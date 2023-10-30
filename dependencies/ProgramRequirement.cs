@@ -9,6 +9,9 @@ namespace Elements
 {
     public partial class ProgramRequirement
     {
+        [JsonProperty("Default Wall Type")]
+        public string DefaultWallType { get; internal set; }
+
         public string QualifiedProgramName => String.IsNullOrWhiteSpace(this.ProgramGroup) ? this.ProgramName : $"{this.ProgramGroup} - {this.ProgramName}";
         public Guid? SpaceConfig { get; set; }
 
