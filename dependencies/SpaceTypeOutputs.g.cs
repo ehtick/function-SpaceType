@@ -17,16 +17,13 @@ namespace SpaceType
     public class SpaceTypeOutputs: SystemResults
     {
 
-
         /// <summary>
         /// Construct a SpaceTypeOutputs with default inputs.
         /// This should be used for testing only.
         /// </summary>
         public SpaceTypeOutputs() : base()
         {
-
         }
-
 
 	}
 }

@@ -89,7 +89,7 @@ namespace SpaceType
       var allSpaceBoundaries = inputModels["Space Planning Zones"]
         .AllElementsAssignableFromType<SpaceBoundary>()
         .Where(sb => !handledSpaces.Contains(sb.Id) && !ReservedSpaceTypes.Contains(sb.HyparSpaceType ?? sb.Name));
-      // For any spaces which were not "required," we still want to respect their wall requirements. 
+      // For any spaces which were not "required," we still want to respect their wall requirements.
       LayoutStrategies.GenerateWallsForAllSpaces<LevelElements, LevelVolume, SpaceBoundary, CirculationSegment>(allSpaceBoundaries, inputModels, output.Model);
 
       return output;
