@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Hypar.Elements" Version="2.1.0" />
+    <PackageReference Include="Hypar.Elements" Version="2.2.0-alpha.1" />
     <PackageReference Include="Hypar.Functions" Version="1.10.0" />
   </ItemGroup>
 
