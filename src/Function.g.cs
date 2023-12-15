@@ -63,7 +63,7 @@ namespace SpaceType
             {
                 this.store = new UrlModelStore<SpaceTypeInputs>();
             }
-            
+            args.StreamModel = true;
 
             var l = new InvocationWrapper<SpaceTypeInputs,SpaceTypeOutputs> (store, SpaceType.Execute);
             var output = await l.InvokeAsync(args);
