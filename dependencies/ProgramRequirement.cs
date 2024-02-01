@@ -7,15 +7,12 @@ using Newtonsoft.Json;
 
 namespace Elements
 {
-    public partial class ProgramRequirement
+    public partial class ProgramRequirement : IProgramRequirement
     {
         [JsonProperty("Default Wall Type")]
         public string DefaultWallType { get; internal set; }
 
         public string QualifiedProgramName => String.IsNullOrWhiteSpace(this.ProgramGroup) ? this.ProgramName : $"{this.ProgramGroup} - {this.ProgramName}";
-        public Guid? SpaceConfig { get; set; }
-
-        public Guid? Catalog { get; set; }
 
         public bool Enclosed { get; set; }
 
