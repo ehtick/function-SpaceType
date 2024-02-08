@@ -75,14 +75,16 @@ namespace SpaceType
           continue;
         }
         Console.WriteLine($"instantiating {programName}");
+
+        SpaceConfiguration configs = ContentManagement.GetSpaceConfiguration<ProgramRequirement>(inputModels, configPath, programName);
         var ids = LayoutStrategies.StandardLayoutOnAllLevels<LevelElements, LevelVolume, SpaceBoundary, CirculationSegment>(
             programName,
             inputModels,
             input.Overrides,
             output.Model,
             true,
-            configPath,
-            catalogPath);
+            configs,
+            CountSeats);
         handledSpaces.UnionWith(ids);
         alreadyHandled.Add(programReq.QualifiedProgramName);
       }
@@ -93,6 +95,12 @@ namespace SpaceType
       LayoutStrategies.GenerateWallsForAllSpaces<LevelElements, LevelVolume, SpaceBoundary, CirculationSegment>(allSpaceBoundaries, inputModels, output.Model);
 
       return output;
+    }
+
+    private static int CountSeats(LayoutInstantiated layout)
+    {
+      // TODO: add code for counting seats
+      return 0;
     }
   }
 }
