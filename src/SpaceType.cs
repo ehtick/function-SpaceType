@@ -74,6 +74,10 @@ namespace SpaceType
           Console.WriteLine($"No Space information for {programName}.");
           continue;
         }
+
+        string configJsonPath = Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), configPath);
+        SpaceConfiguration config = ContentManagement.GetSpaceConfiguration<ProgramRequirement>(inputModels, configJsonPath, programName);
+
         Console.WriteLine($"instantiating {programName}");
 
         SpaceConfiguration configs = ContentManagement.GetSpaceConfiguration<ProgramRequirement>(inputModels, configPath, programName);
@@ -83,8 +87,7 @@ namespace SpaceType
             input.Overrides,
             output.Model,
             true,
-            configs,
-            CountSeats);
+            config);
         handledSpaces.UnionWith(ids);
         alreadyHandled.Add(programReq.QualifiedProgramName);
       }

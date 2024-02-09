@@ -60,7 +60,8 @@
     "https://schemas.hypar.io/LevelVolume.json",
     "https://schemas.hypar.io/WorkpointCount.json",
     "https://schemas.hypar.io/CirculationSegment.json",
-    "https://schemas.hypar.io/ProgramRequirement.json"
+    "https://schemas.hypar.io/ProgramRequirement.json",
+    "https://schemas.hypar.io/RevitFamilyPointInstanceMapping.json"
   ],
   "model_output": "Furniture and Equipment",
   "repository_url": "https://github.com/hypar-io/function",
