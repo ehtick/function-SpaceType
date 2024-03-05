@@ -75,14 +75,14 @@ namespace SpaceType
           continue;
         }
         Console.WriteLine($"instantiating {programName}");
+        SpaceConfiguration configs = ContentManagement.GetSpaceConfiguration<ProgramRequirement>(inputModels, configPath, programName);
         var ids = LayoutStrategies.StandardLayoutOnAllLevels<LevelElements, LevelVolume, SpaceBoundary, CirculationSegment>(
             programName,
             inputModels,
             input.Overrides,
             output.Model,
             true,
-            configPath,
-            catalogPath);
+            configs);
         handledSpaces.UnionWith(ids);
         alreadyHandled.Add(programReq.QualifiedProgramName);
       }
