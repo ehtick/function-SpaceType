@@ -80,7 +80,6 @@ namespace SpaceType
 
         Console.WriteLine($"instantiating {programName}");
 
-        SpaceConfiguration configs = ContentManagement.GetSpaceConfiguration<ProgramRequirement>(inputModels, configPath, programName);
         var ids = LayoutStrategies.StandardLayoutOnAllLevels<LevelElements, LevelVolume, SpaceBoundary, CirculationSegment>(
             programName,
             inputModels,
