@@ -74,6 +74,7 @@ namespace SpaceType
           Console.WriteLine($"No Space information for {programName}.");
           continue;
         }
+
         Console.WriteLine($"instantiating {programName}");
         SpaceConfiguration configs = ContentManagement.GetSpaceConfiguration<ProgramRequirement>(inputModels, configPath, programName);
         var ids = LayoutStrategies.StandardLayoutOnAllLevels<LevelElements, LevelVolume, SpaceBoundary, CirculationSegment>(

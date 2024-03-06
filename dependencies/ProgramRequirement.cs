@@ -37,6 +37,7 @@ namespace Elements
             var spaceConfig = programReqModel.GetElementOfType<SpaceConfigurationElement>(this.SpaceConfig.Value);
             var config = spaceConfig.SpaceConfiguration;
             File.WriteAllText(configPath, JsonConvert.SerializeObject(config));
+
             return (catalogPath, configPath);
         }
     }
